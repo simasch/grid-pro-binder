@@ -108,7 +108,7 @@ public class GridProBinder extends Div {
                 })
                 .bind(Person::getAktiv, Person::setAktiv);
 
-        addEditColumnWithBinder(binder, Person::getAktiv, checkbox, "Aktiv");
+        addEditColumnWithBinder(binder, person -> person.aktiv.equals("J"), checkbox, "Aktiv");
 
         grid.addCellEditStartedListener(event -> {
             // We prefer using setBean as GridPro is by nature un-buffered
